@@ -108,7 +108,6 @@ a:hover {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: raleway,sans-serif;
     line-height: 1.2;
     color: #333;
     font-weight: 200;
@@ -410,6 +409,17 @@ table th {
 table th, table td {
     padding: 10px 20px;
     border: 1px solid #dddddd;
+}
+
+.map {
+    scrolling: "no";
+    marginheight: 0;
+    marginwidth: 0;
+    frameborder: 0;
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    display:block
 }
 
 @media (max-width: 767px) {
