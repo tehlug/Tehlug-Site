@@ -359,7 +359,7 @@ ul {
 
 .footer li {
     margin: auto;
-    padding: 0px 8px;
+    padding: 0px 14px;
 }
 
 .page-title {
@@ -445,5 +445,33 @@ table th, table td {
 
     .container {
         margin-top: 10px;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    text-align: center;
+}
+
+.gallery-column {
+    flex: 25%;
+}
+
+.gallery-column img {
+    margin-top: 8px;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .gallery-column {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery-column {
+        flex: 100%;
     }
 }
