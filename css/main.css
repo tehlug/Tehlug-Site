@@ -284,8 +284,19 @@ ul {
     letter-spacing: 1px;
 }
 
-.recent-posts .posts .post {
+.recent-posts .posts {
     margin-bottom: 30px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 450;
+    margin-bottom: 12px;
+}
+
+.post {
+    border-bottom: 1px solid #e1e4e8!important;
+    padding: 20px 10px;
 }
 
 .recent-posts .posts .post .meta,
@@ -347,8 +358,8 @@ ul {
 .footer {
     font-size: 0.9em;
     border-top: 1px solid #e1e4e8;
-    padding: 10px 0px 10px 0px;
-    margin-top: 40px;
+    padding: 10px 0px;
+    margin-top: 80px;
 }
 
 .footer ul {
