@@ -26,7 +26,7 @@ body {
 }
 
 a, a:hover {
-    color: #a00;
+    color: #0366d6;
     text-decoration: none;
     word-break: break-word;
 }
@@ -85,7 +85,7 @@ blockquote {
     font-size: 1.4rem;
     font-family: Georgia,bitstream charter,serif;
     border-left: 3px solid;
-    border-color: #a00;
+    border-color: #0366d6;
     padding-left: 20px;
 }
 
@@ -99,7 +99,7 @@ blockquote em {
 }
 
 a,a:hover {
-    color: #a00;
+    color: #0366d6;
     text-decoration: none
 }
 
@@ -325,7 +325,7 @@ ul {
 }
 
 .post .draft-label {
-    color: #a00;
+    color: #0366d6;
     text-decoration: none;
     padding: 2px 4px;
     border-radius: 4px;
@@ -340,10 +340,10 @@ ul {
 
 .post-tags .tags a {
     display: inline-block;
-    border: 1px solid #a00;
+    border: 1px solid #0366d6;
     border-radius: 4px;
     padding: 0px 6px;
-    color: #a00;
+    color: #0366d6;
     line-height: 20px;
     font-size: 12px;
     text-decoration: none;
