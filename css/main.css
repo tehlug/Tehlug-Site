@@ -19,7 +19,7 @@
 body {
     font-family: "Shabnam", "ubuntu", sans-serif;
     font-weight: 400;
-    color: #333;
+    color: #586069;
     line-height: 1.6;
     font-size: 16px;
     direction: rtl;
@@ -109,7 +109,7 @@ a:hover {
 
 h1,h2,h3,h4,h5,h6 {
     line-height: 1.2;
-    color: #333;
+    color: #24292e;
     font-weight: 200;
 }
 
@@ -236,8 +236,26 @@ ul {
 }
 
 .header nav {
-    margin-top: 20px;
-    border-top: 1px solid #f4f4f4;
+    padding: 16px 0px;
+    border-bottom: 1px solid #d1d5da;
+}
+
+.nav a {
+    color: #586069;
+    font-size: 1rem;
+    padding: 16px 8px;
+}
+
+nav a:hover {
+    text-decoration: none
+}
+
+.selected a {
+    color: #24292e;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 16px 8px;
+    border-bottom: 2px solid #e36209;
 }
 
 .header nav ul,
