@@ -235,14 +235,14 @@ ul {
 }
 
 .header nav {
-    padding: 16px 0px;
+    padding: 8px 0px;
     border-bottom: 1px solid #d1d5da;
 }
 
 .nav a {
     color: #586069;
     font-size: 1rem;
-    padding: 16px 8px;
+    padding: 8px 8px;
 }
 
 nav a:hover {
@@ -253,7 +253,7 @@ nav a:hover {
     color: #24292e;
     font-size: 1rem;
     font-weight: 500;
-    padding: 16px 8px;
+    padding: 8px 8px;
     border-bottom: 2px solid #e36209;
 }
 
@@ -271,7 +271,7 @@ nav a:hover {
     list-style: none;
     margin-left: 0;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     text-transform: capitalize;
 }
 
