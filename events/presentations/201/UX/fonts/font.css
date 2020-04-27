@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'BNazanin';
+  src: url('BNazanin.eot?#') format('eot'),  /* IE6–8 */
+       url('BNazanin.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BNazanin.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+  font-family: 'BYekan';
+  src: url('BYekan.eot?#') format('eot'),  /* IE6–8 */
+       url('BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BYekan.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BBardiya';
+  src: url('BBardiya.eot?#') format('eot'),  /* IE6–8 */
+       url('BBardiya.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BBardiya.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
