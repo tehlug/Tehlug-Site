@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Vagrant</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" type="text/css" href="font.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+    <section class="stack" data-id="1272895275246cffa7ea96512b8b49ad">
+        <section class="disabled" data-id="2fc46771b9e320fc45d555d1a219469f">
+            <h1>Vagrant</h1>
+<div>
+            <br>
+        </div>
+<div>
+        <br>
+        </div>
+<div>Virtualize your development&nbsp;environments</div>
+    </section>
+    <section class="disabled" data-id="6e1af3df825da8a7906072835f1c9368">
+        <h2>who am I?</h2>
+<div>
+        <br>
+    </div>
+<div>fzerorubigd@gmail</div>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<div>WEB Developer</div>
+<div>
+<br>
+</div>
+<div>Bita's Dad</div>
+<div>
+<img src="new_avatar200.jpg">
+<br>
+</div>
+</section>
+</section>
+<section class="stack" data-id="ba0c567b9731366674e181ef62c4788b">
+    <section class="disabled" data-id="b83950aa5c325f6b6c16626121e90a4e">
+        <h2>WHy??????</h2>
+<div>
+        <br>
+    </div>
+<div>
+    <br>
+</div>
+<div>
+<br>
+</div>
+<div>Think about something like .......</div>
+</section>
+<section class="disabled" data-id="bc66ec72c0b1ce93c1dbf5fa2c554641">
+    <h2>
+        <br>
+    </h2>
+<div>Multiple project</div>
+<div>+</div>
+<div>Multiple dependencies for each project&nbsp;</div>
+<div>
+    <br>
+</div>
+<div>=</div>
+<div>
+<br>
+</div>
+<div>Oh :/ not good&nbsp;</div>
+</section>
+<section class="disabled" data-id="9d60460fac06a17ce1e157d3d7adca1f">
+    <h2>
+        <br>
+    </h2>
+<div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">Multiple project</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">+</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">Multiple dependencies for each project</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">+</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">One software with different version&nbsp;</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">=</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">
+<br>
+</div>
+<div style="font-size: 35.63941192626953px; font-style: normal; font-variant: normal;">Oh :/ Not good at all!!&nbsp;</div>
+</div>
+</section>
+<section class="disabled" data-id="b4d8a757656501ae20bf6b5ed0ee3f8b">
+    <h2>
+        <br>
+    </h2>
+<div>An old project with a lot of dependencies</div>
+<div>+</div>
+<div>New developer with new machine :)</div>
+<div>
+    <br>
+</div>
+<div>=</div>
+<div>
+<br>
+</div>
+<div>A lot of time and hard work for&nbsp;</div>
+<div>creating another junk storage :))</div>
+</section>
+<section class="disabled" data-id="4e168cf8763627e2759a22ff9f81b661">
+    <h2>
+        <br>
+    </h2>
+<div>Test environment</div>
+<div>
+    <br>
+</div>
+<div>&lt;&gt;</div>
+<div>
+<br>
+</div>
+<div>Development environment</div>
+<div>
+<br>
+</div>
+<div>
+<img src="4edca42f18613341eb000000.jpg">
+<br>
+</div>
+</section>
+<section class="disabled" data-id="7f00d9d5c16b1338f39b4bba0cc65cf0">
+    <h2>MORE REASON??</h2>
+<div>
+<img src="4edbbd42186133495a000000.jpg">
+    <br>
+</div>
+</section>
+</section>
+<section class="stack" data-id="28d4dc874c17f417e276dc7f9e1b521a">
+    <section class="disabled" data-id="2cdf24a4d09a12619c18755be618d130">
+        <h2>THE IDEA</h2>
+<div>
+        <br>
+    </div>
+<div>git clone</div>
+<div>
+    <br>
+</div>
+<div>cd myapp</div>
+<div>
+<br>
+</div>
+<div>
+<b>
+<font color="#da0e0e">magic command</font>
+</b>
+</div>
+<div>
+<b>
+<font color="#da0e0e">
+    <br>
+</font>
+</b>
+</div>
+<div>run my app</div>
+</section>
+<section class="disabled" data-id="6bf18921119f48930f2c6317049a4ec7">
+    <h2>Goals</h2>
+<div>Isolate development resources</div>
+<div>Less time to setup</div>
+<div>Reuse your env. on many machine</div>
+<div>Same env. for any *nix base system</div>
+<div>Keep development machine small and fast!</div>
+</section>
+<section class="disabled" data-id="0d030cb30f2cfcf1ee246598f9dd9429">
+    <h2>The solution</h2>
+<div>
+    <br>
+</div>
+<div>git clone</div>
+<div>
+<br>
+</div>
+<div>cd myapp</div>
+<div>
+<br>
+</div>
+<div>
+<font color="#da0e0e">vagrant up</font>
+</div>
+<div>
+<br>
+</div>
+<div>run my app</div>
+</section>
+</section>
+<section class="stack" data-id="d98f8b65d3cbb1890e9f5f624f731674">
+    <section class="disabled" data-id="dff4a35f42aac8b8337fa9e097caa24d">
+        <h2>VAGRANT</h2>
+<div>
+        <br>
+    </div>
+<div>A provider (Virtualbox, docker , VMWare)</div>
+<div>+</div>
+<div>Provision with Shell, Puppet, Chef, ...</div>
+<div>
+    <br>
+    </div>
+<div>
+<img src="4edbbd461861334a4a000000.jpg">&nbsp;</div>
+</section>
+<section class="disabled" data-id="603c40af7d019ca9a8c652ef34f1da82">
+    <h2>WORKFLOW</h2>
+<div>
+    <ul>
+<li>
+<span style="text-align: center;">vagrant init hashicorp/ubuntu</span>
+    <br>
+</li>
+<li>
+<span style="text-align: center;">vagrant up &nbsp;#provision for first time</span>
+    <br>
+</li>
+<li>
+<span style="text-align: center;">vagrant ssh&nbsp;</span>
+    <br>
+</li>
+<li>
+<span style="text-align: center;">DO YOUR WORK</span>
+    <br>
+</li>
+<li>
+<span style="text-align: center;">vagrant halt</span>
+    <br>
+</li>
+<li>
+<span style="text-align: center;">vagrant destroy</span>
+    <br>
+</li>
+</ul>
+</div>
+</section>
+<section class="disabled" data-id="37cc772730d8b8005afb5fbc28f9ef78">
+    <h2>VIRTUALBOX</h2>
+<div>Advantage :&nbsp;</div>
+<div>
+    <br>
+</div>
+<div>Cross platform</div>
+<div>Very simple to setup</div>
+<div>
+<br>
+</div>
+<div>Problems:</div>
+<div>Resource hungry</div>
+<div>VERY!! slow share (must use nfs!)</div>
+</section>
+<section class="disabled" data-id="bd7491fd5332d76624b4051d70fa33a0">
+    <h2>DOCKER</h2>
+<div>Advantage :&nbsp;</div>
+<div>Very fast!</div>
+<div>No extra resource!</div>
+<div>
+    <br>
+</div>
+<div>Problems :</div>
+<div>Very young (its here after vagrant 1.6)</div>
+<div>Only on linux&nbsp;</div>
+<div>
+<br>
+</div>
+<div>
+<img src="4edcec0e1861330480000000.png" style="width: 249.996px; height: 198.214px; max-height: none; max-width: none;">
+<br>
+</div>
+</section>
+</section>
+<section class="stack" data-id="e24932fd9c26322f26a70d75d7701ec1">
+    <section class="disabled" data-id="3ba9ca517866b9964ca16a39e767fcdc">
+        <h2>BASEBOX</h2>
+<div>
+        <br>
+        </div>
+<div>The vagrant list, just google it :)</div>
+    </section>
+    <section class="disabled" data-id="a8adc33ea7549d4b52948734e9b5acf5">
+        <h2>packer</h2>
+<div>
+        <br>
+        </div>
+<div>Another project to create base box for all types</div>
+<div>packer.io</div>
+    </section>
+    <section class="disabled" data-id="f48498972542c49a8011958b5ff5407a">
+        <h2>build it from scratch</h2>
+<div>
+        <br>
+    </div>
+<div>Just install a linux on a virtualbox</div>
+<div>
+    <br>
+</div>
+<div>or&nbsp;</div>
+<div>
+<br>
+</div>
+<div>build an image for docker :)</div>
+</section>
+</section>
+<section class="disabled" data-id="a1eee63ff5534f8c5c36c538e1316dc6">
+    <h2>QUESTIONS???</h2>
+</section>
+</div>
+
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
