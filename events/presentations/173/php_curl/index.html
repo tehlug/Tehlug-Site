@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title> PHP CURL </title>
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="overview" class="step" data-x="5000" data-y="4070" data-scale="30">
+    </div>
+	
+    <div id="bored" class="step slide" data-x="-1000" data-y="-4500">
+	    <p style="font:bold 60px">What is CURL?</p><br>
+		<p>[copy right: Uunder a MIT/X derivate license]</p><br>
+
+        <p>curl is a tool to transfer data from or to a server, using one of the supported protocols.</p><br><br>
+        <p>curl is a command line tool for transferring data with URL syntax.</p>
+    </div>
+
+    <div class="step slide" data-x="0" data-y="-4500">
+        <q>supporting</q><br>
+
+		<p style="line-height:50px">
+		DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, 
+		SMTPS, Telnet....
+		</p>
+    </div>
+
+    <div class="step slide" data-x="1000" data-y="-4500">
+        <h3>Tools To Use Instead of curl:</h3>
+		<p style="margin-left:50px; color:#0303BF">wget, ncat, ...</p><br>
+		
+		<h3>Tools That Help You use curl:</h3>
+		<p style="margin-left:50px; color:#0303BF">LiveHTTPHeaders, Wireshark, tcpdump, ssldump, ...</p><br>
+
+		<h3>Companies Using curl in Commercial Environments:</h3>
+		<p style="margin-left:50px; color:#0303BF">Adobe, google, Cern, Cisco,  F-secure, IBM, ...</p><br>
+
+		<h3>Programs using curl for file transfers:</h3>
+		<p style="margin-left:50px; color:#0303BF">mcurl, leech, ...</p>
+    </div>
+	
+	<div class="step slide" data-x="1500" data-y="-2500">
+	    <p>What is LIBCURL?<b><br>
+		[copy right: Uunder a MIT/X derivate license]</p><br><br>
+        <p  style="color:#030375">libcurl is a free and easy to use client side URL transfer library.</p><br>
+        <p  style="color:#030375">libcurl is highly portable, it builds and works identically on numerous platforms.</p><br>
+		<p  style="color:#030375">libcurl is free, thread safe, IPv6 compatible, feature rich, well supported, fast, thoroughly documented.</p>
+    </div>
+	
+	<div id="its2" class="step" data-x="1000" data-y="7000" data-rotate="190" data-scale="20">
+        <strong>42 Bindings</strong>
+			<p style="color:#B24D05">Bacic, C++, D, Falcon, Java, Lua, PHP, Haskell, Perl, Python, Ruby, SPL, Postgres, ...<br></p>
+        
+    </div>
+	
+	<div class="step slide" data-x="2700" data-y="-2200">
+		<h3>wget website grabber(recursive):</h3><br />
+		<pre style="color:#FC6202">
+			$ wget \
+				 --recursive \
+				 --no-clobber \
+				 --page-requisites \
+				 --html-extension \
+				 --convert-links \
+				 --restrict-file-names=windows \
+				 --domains backtrack-linux.org \
+				 --no-parent \
+					 http://www.backtrack-linux.org/wiki/index.php/Main_Page
+
+		</pre>
+    </div>
+
+	<div id="php_curl_intro" class="step php_curl_intro" data-x="850" data-y="3000" data-rotate="90" data-scale="3">
+        <strong>Introducing PHP/CURL</strong>
+			<p>Multiple Transfer Protocols<br>
+			Form Submission<br>
+			Basic Authentication<br>
+			Cookies<br>
+			Redirection<br>
+			Agent Name Spoofing<br>
+			Referer Management<br>
+			Socket Management<br></p>
+        
+    </div>
+
+    <div id="browser_problem" class="step step_1" data-x="14000" data-y="1000" data-z="300" data-scale="7">
+        <h2 style="font-size:50px">The Problem with Browsers ?</h2>
+        <ul style="font-size:36px">
+			<li>* Browsers cannot aggregate and filter information for relevance.</li>
+			<li>* Browsers cannot interpret what they find online.</li>
+			<li>* Browsers cannot act on your behalf.</li>
+		</ul>
+    </div>
+	
+	<div id="bot_sample" class="step step_1" data-x="0" data-y="0" data-rotate="130" data-scale="4">
+        <h2 style="font-size:50px">web bot samples</h2>
+        <ul style="font-size:36px">
+			<li>* Webbots That Aggregate and Filter Information for Relevance.</li>
+			<li>* Webbots That Interpret What They Find Online.</li>
+			<li>* Webbots That Act on Your Behalf(Pokerbots).</li>
+		</ul>
+    </div>
+
+    <div id="challengs" class="step challengs" data-x="-12500" data-y="8100" data-rotate="160" data-scale="8">
+        <p>
+			<h2 style="color:blue">challengs</h2>
+			
+			<ul>
+				<li>Making Data Smaller</li>
+				<li>Form submition</li>
+				<li>Long live  process</li>
+				<li>Memory Management</li>
+				<li>Fault Tolerance</li>
+				<li>Spider Trap</li>
+				<li>Syste Log</li>
+			</ul>
+		
+		</p>
+    </div>
+	
+	<div id="challengs_2" class="step challengs" data-x="-12500" data-y="12500" data-rotate="160" data-scale="8">
+        <p>
+			<h2>curl_getinfo</h2>
+			
+			<pre>
+			curl_getinfo($ch)[<span style="color:blue">'http_code'</span>]
+			curl_getinfo($ch)[<span style="color:blue">'content_type'</span>]
+			curl_getinfo($ch)[<span style="color:blue">'request_size'</span>]
+			curl_getinfo($ch)[<span style="color:blue">'certinfo'</span>]
+			curl_getinfo($ch)[<span style="color:blue">'redirect_url'</span>]
+			</pre>
+		</p>
+    </div>
+
+    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+		<b>sniper:</b>
+		<img src="images/Sniper.png" />
+    </div>
+
+    <div id="Procurement" class="step" data-x="-3500" data-y="-850" data-z="-3000" data-rotate="170" data-scale="6">
+        <h3>Procurement Bot</h3>
+		<img src="images/procurement bot.png" />
+    </div>
+
+    <div id="Scaling" class="step" data-x="13700" data-y="-2800" data-scale="6">
+		<h2>Scaling:</h2>
+		
+		<ul style="margin-left:50px; color:#1143F9">
+			<li>One-to-many</li>
+			<li>One-to-one</li>
+			<li>Many-to-many</li>
+			<li>Many-to-one</li>
+		</ul>	   
+	</div>
+	
+	<div id="Scaling_2" class="step" data-x="6700" data-y="-300" data-scale="6">
+		<h2>Multiple Instances of a Webbot:</h2>
+		
+		<ul  style="margin-left:50px; color:#1143F9">
+			<li>Additional processes</li>
+			<li>Fork current process</li>
+			<li>Multiple pieces of hardware</li>
+		</ul>	   
+	</div>
+	
+	<div id="Stealth" class="step" data-x="9300" data-y="2500" data-rotate="20" data-scale="3">
+		<h2>Stealth:</h2> Simulating Human Patterns:
+		
+		<ul style="margin-left:50px; color:#1143F9">
+			<li>Be Kind to Your Resources</li>
+			<li>Run During Busy Hours</li>
+			<li>Use Random Delays</li>
+		</ul>	
+    </div>
+	
+	<div id="Killing" class="step" data-x="6000" data-y="4000" data-scale="2">
+		<h2>Killing web bot:</h2>
+		
+		<ul style="margin-left:50px; color:#1143F9">
+			<li>Use the robots.txt File</li>
+			<li>Use the Robots Meta Tag</li>
+			<li>Use Obfuscation</li>
+			<li>Use Cookies, Encryption, JavaScript, and Redirection</li>
+			<li>Embed Text in Other Media</li>
+			<li>Spider Trap</li>
+		</ul>	
+    </div>
+	
+	<div id="its-in-3d" class="step" data-x="3200" data-y="4900" data-z="-400" data-rotate-x="120" data-rotate-y="70" data-scale="4">
+        <strong>Respect to robots.txt and robots meta tag, yes or no???</strong>
+    </div>
+	
+	<div id="BOT_Net" class="step" data-x="6200" data-y="7300" data-z="300" data-rotate-x="-40" data-rotate-y="10" data-scale="4">
+       BOT Net
+    </div>
+
+
+    <div id="overview" class="step" data-x="5000" data-y="4070" data-scale="30">
+    </div>
+
+</div>
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>

@@ -1,0 +1,1212 @@
+<html style="height: 100%;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>TDD</title>
+
+    <meta name="description" content="A simple intro in tdd with focus on PHP">
+    <meta name="author" content="fzerorubigd">
+
+    <style>
+        .componentContainer {
+            position: absolute;
+            line-height: normal;
+            /*-webkit-transform-origin: 135% 135%;
+            -moz-transform-origin: 135% 135%;
+            transform-origin: 135% 135%;*/
+        }
+
+        .transformContainer {
+            -webkit-transform-origin: 0 0;
+            -moz-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="http://strut.io/editor/preview_export/css/themes/default-reset.css">
+    <link href="./tdd_files/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://strut.io/editor/preview_export/reveal/css/theme/default.css" id="theme">
+    <link href="./tdd_files/web-fonts.css" rel="stylesheet" type="text/css">
+    <link href="./tdd_files/backgroundClasses.css" rel="stylesheet" type="text/css">
+    <link href="./tdd_files/surfaceClasses.css" rel="stylesheet" type="text/css">
+    <style>
+        .reveal.themedArea {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script type="text/javascript" src="./tdd_files/dataset-shim.js"></script>
+    <script type="text/javascript" src="./tdd_files/impress.js"></script>
+
+    <script src="./tdd_files/onready.js"></script>
+    <script src="./tdd_files/loadPresentation.js"></script>
+    <script>
+        ready(function () {
+            if (document.getElementById('launched-placeholder'))
+                loadPresentation();
+
+            if (!window.presStarted) {
+                startPres(document, window);
+                impress().init();
+            }
+
+            if ("ontouchstart" in document.documentElement) {
+                document.querySelector(".hint").innerHTML =
+                        "<p>Tap on the left or right to navigate</p>";
+            }
+        });
+    </script>
+    <style type="text/css"></style>
+</head>
+<body class="impress-supported impress-enabled" style="height: 100%; overflow: hidden;">
+<style type="text/css">
+    /*.example {
+        border: 4px groove orange;
+    }*/
+</style>
+<style>
+    .bg-custom-EEE {
+        background: #EEE;
+    }
+</style>
+<style>
+
+
+</style>
+<!-- This is a work around / hack to get the user's browser to download the fonts 
+ if they decide to save the presentation. -->
+<div style="visibility: hidden; width: 0px; height: 0px">
+    <img src="./tdd_files/Lato-Bold.woff">
+    <img src="./tdd_files/HammersmithOne.woff">
+    <img src="./tdd_files/Droid-Sans-Mono.woff">
+    <img src="./tdd_files/Gorditas-Regular.woff">
+    <img src="./tdd_files/FredokaOne-Regular.woff">
+    <img src="./tdd_files/Ubuntu.woff">
+    <img src="./tdd_files/Ubuntu-Bold.woff">
+    <img src="./tdd_files/PressStart2P-Regular.woff">
+    <img src="./tdd_files/Lato-BoldItalic.woff">
+    <img src="./tdd_files/AbrilFatface-Regular.woff">
+    <img src="./tdd_files/Lato-Regular.woff">
+</div>
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified
+        version of this presentation.</p>
+
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div class="bg bg-surf-grad-smoke strut-surface">
+<div class="bg innerBg strut-slide-13 bg-surf-grad-smoke">
+<div id="impress"
+     style="position: absolute; -webkit-transform-origin: 0% 0%; transition: all 0ms ease-in-out 0ms; -webkit-transition: all 0ms ease-in-out 0ms; -webkit-transform-style: preserve-3d; top: 50%; left: 50%; -webkit-transform: perspective(3475.113122171946px) scale(0.28776041666666663);">
+<div style="position: absolute; -webkit-transform-origin: 0% 0%; transition: all 0ms ease-in-out 0ms; -webkit-transition: all 0ms ease-in-out 0ms; -webkit-transform-style: preserve-3d; -webkit-transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg) translate3d(-14486.186666666666px, -4592.64px, 0px);">
+
+
+<div class="step future" data-state="strut-slide-0 bg-surf-grad-smoke " data-x="2416.64" data-y="2641.92" data-scale="4"
+     id="step-1"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(2416.64px, 2641.92px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(4); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-0" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font><b>TDD - Test Driven Development</b><br></font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 204px; left: 89px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 46px;" class="antialias">
+                    A quick intro in TDD with focus on PHP<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 666px; left: 175px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font>tehlug, Azar 1392 (Dec 2013)<br></font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-1 bg-surf-grad-smoke " data-x="6280.533333333334" data-y="2764.8"
+     data-scale="8" id="step-2"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(6280.533333333334px, 2764.8px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(8); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-1" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 71px; left: 340px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 74px;" class="antialias">
+                    <font face="Ubuntu">Why test?&nbsp;</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 211px; left: 384px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 256px; height: 241.59px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1.11, 1.11);
+-moz-transform: scale(1.11, 1.11);
+transform: scale(1.11, 1.11)">
+                <img src="./tdd_files/kidding.jpg">
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 476px; left: 325px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font face="Ubuntu">R U KIDDING ME?</font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-2 bg-surf-grad-smoke " data-x="4232.533333333334" data-y="6005.76"
+     data-rotate-z="47.55549699585833" data-scale="3" id="step-3"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(4232.533333333334px, 6005.76px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(47.55549699585833deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-2" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font>Old style tests</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 166px; left: 197px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <img src="./tdd_files/test_after_the_code.png">
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 400px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    <ul>
+                        <li><font face="Ubuntu, sans-serif"><span style="line-height: normal;">Coverage is always lower than expected</span><br></font>
+                        </li>
+                        <li><span style="line-height: normal;"><font face="Ubuntu, sans-serif">Writing tests is a
+                            nightmare!</font></span></li>
+                        <li><span style="line-height: normal;">Hard to debug</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 620px; left: 100px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    <font face="Ubuntu">&nbsp;if you had a code&nbsp;without&nbsp;test, start to write test today,&nbsp;tomorrow&nbsp;is
+                        late :)</font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-3 bg-surf-grad-smoke " data-x="8301.226666666667" data-y="5713.92"
+     data-rotate-z="-57.86873730821315" data-scale="3" id="step-4"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(8301.226666666667px, 5713.92px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(-57.86873730821315deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-3" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 158px; left: 110px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <img src="./tdd_files/tdd.png">
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font face="Ubuntu">TDD - Test Driven Development</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 423px; left: 154px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    <ul>
+                        <li><font color="#e21414"><span style="font-family: Ubuntu; line-height: normal;">Write test (or additional test)</span><br></font>
+                        </li>
+                        <li><font face="Ubuntu" color="#e21414"><span style="line-height: normal;">Make sure all are failed</span></font>
+                        </li>
+                        <li><font face="Ubuntu" color="#1e9725"><span style="line-height: normal;">Write code to pass them, even dirty :) code</span></font>
+                        </li>
+                    </ul>
+                    <span style="font-family: Ubuntu; line-height: 1em;"><ol>
+                        <li><font color="#1e9725"><span
+                                style="line-height: 1em;">KISS (Keep it simple stupid)</span><br></font></li>
+                        <li><font color="#1e9725"><span
+                                style="line-height: 1em;">YAGNI (You Arenot Gonna Need It)</span><br></font></li>
+                        <li><span style="line-height: 1em;"><font color="#1e9725">&nbsp;fake it til you make
+                            it</font></span><br></li>
+                    </ol></span>
+                    <ul>
+                        <li><font color="#53a9c0"><span style="font-family: Ubuntu;">Refactor &nbsp;the code</span><br></font>
+                        </li>
+                        <li><font color="#53a9c0"><span
+                                style="font-family: Ubuntu;">Jump to step 1 again</span><br></font></li>
+                    </ul>
+                    <div><font face="Ubuntu"><span style="line-height: 24px;"><br></span></font></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-4 bg-surf-grad-smoke " data-x="10444.8" data-y="9615.36" data-scale="3"
+     id="step-5"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(10444.8px, 9615.36px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-4" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 41px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font face="Ubuntu">Benefits :)</font><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 235px; left: 71px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 42px;" class="antialias">
+                    <ul>
+                        <li><span style="font-family: Ubuntu; line-height: normal;">Best coverage, near 100%</span><br>
+                        </li>
+                        <li><font face="Ubuntu"><span style="line-height: normal;">Write test is easy, since we write them first!!</span></font>
+                        </li>
+                        <li><font face="Ubuntu"><span style="line-height: normal;">Less debug required</span></font>
+                        </li>
+                        <li><font face="Ubuntu"><span style="line-height: normal;">Better&nbsp;understanding&nbsp;of the code</span></font>
+                        </li>
+                        <li><font face="Ubuntu"><span
+                                style="line-height: normal;">Design is done in writing tests</span></font></li>
+                        <li><font face="Ubuntu"><span
+                                style="line-height: normal;">More flexible and readable code</span></font></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-5 bg-surf-grad-smoke " data-x="18978.133333333335" data-y="5191.68"
+     data-scale="4" id="step-6"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(18978.133333333335px, 5191.68px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(4); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-5" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 43px; left: 149px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font face="Ubuntu">A bunch of should and should not</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 171px; left: 281px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    <font face="Ubuntu">&nbsp; &nbsp; Write the simplest code to pass the test</font><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 297px; left: 90px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    Don’t introduce dependencies between tests. Test should pass when run in any order.<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 353px; left: 116px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    <div style="text-align: center;">Use mock objects to test code at system boundaries (e.g. database,
+                        container,
+                    </div>
+                    <div style="text-align: center;">&nbsp;file system) so that tests run fast. (What is a mock?? &nbsp;Thanks&nbsp;<a
+                            href="http://en.wikipedia.org/wiki/Mock_object">wiki </a>:) )
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 219px; left: 171px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 24px;" class="antialias">
+                    <div style="text-align: center;">Only write new code when a test is failing. Each test should test&nbsp;</div>
+                    <div style="text-align: center;">new/different behavior.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 446px; left: 376px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 272px; height: 283.54px;">
+            <div class="transformContainer" style="-webkit-transform: scale(0.72, 0.72);
+-moz-transform: scale(0.72, 0.72);
+transform: scale(0.72, 0.72)">
+                <img src="./tdd_files/image_thumb.png">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-6 bg-surf-grad-smoke " data-x="12875.093333333334" data-y="4239.36"
+     data-z="-50" data-scale="2" id="step-7"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(12875.093333333334px, 4239.36px, -50px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(6); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-6" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 57px; left: 106px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font>Acceptance!</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 133px; left: 150px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    a wild custommer appeared<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 530px; left: 236px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font>What about this dots?&nbsp;</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 337px; left: 332px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <img src="data:image/jpeg;base64,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">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-7 bg-surf-grad-smoke " data-x="11741.866666666667" data-y="7526.4"
+     data-scale="1" id="step-8"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(11741.866666666667px, 7526.4px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-7" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 421px; left: 307px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: 389px; height: 286.68px;">
+            <div class="transformContainer" style="-webkit-transform: scale(0.48, 0.48);
+-moz-transform: scale(0.48, 0.48);
+transform: scale(0.48, 0.48)">
+                <img src="./tdd_files/9456260_m.jpg">
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 194px; left: 78px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <div style="text-align: center;"></div>
+                    Domain-specific language like Cucumbers<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 53px; left: 241px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    To accept or not to accept<br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-8 bg-surf-grad-smoke " data-x="33041.066666666666" data-y="7065.6"
+     data-scale="3" id="step-9"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(33041.066666666666px, 7065.6px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-8" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 176px; left: 381px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 96px;" class="antialias">
+                    <font>BDD*</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 659px; left: 49px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    * I promise to have bdd here<br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-9 bg-surf-grad-smoke " data-x="2689.7066666666665" data-y="9446.4"
+     data-scale="3" id="step-10"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(2689.7066666666665px, 9446.4px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-9" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 148px; left: 69px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">PHPunit</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 64px; left: 78px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">A simple demonstration with PHPunit and Composer<br></font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 249px; left: 94px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 16px;" class="antialias">
+                    <font face="Ubuntu">PHPUnit is the de-facto standard for unit testing in PHP projects. It provides
+                        both a framework that makes the writing <br>of tests easy as well as the functionality to easily
+                        run the tests and analyse their results.</font><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 325px; left: 94px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 16px;" class="antialias">
+                    <font face="Ubuntu"><a href="http://phpunit.de/manual/current/en/index.html">http://phpunit.de/manual/current/en/index.html</a></font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 394px; left: 68px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">Composer</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 471px; left: 93px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 16px;" class="antialias">
+                    <font face="Ubuntu">Composer is a tool for dependency management in PHP. It allows you to declare
+                        the dependent libraries your project <br>needs and it will install them in your project for you.</font><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 561px; left: 94px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 16px;" class="antialias">
+                    <font face="Ubuntu"><a href="http://getcomposer.org/">http://getcomposer.org/</a></font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-10 bg-surf-grad-smoke " data-x="10458.453333333333" data-y="13516.8"
+     data-scale="3" id="step-11"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(10458.453333333333px, 13516.8px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-10" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 43px; left: 81px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 73px;" class="antialias">
+                    <font face="Ubuntu">Definition:&nbsp;</font><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 210px; left: 137px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">A simple class with two method:<br><br>
+                        <ol>
+                            <li><span style="line-height: normal;">Min ($a, $b);</span></li>
+                            <li><span style="line-height: normal;">Max ($a, $b);</span></li>
+                        </ol>
+                        <div><br></div>
+                        <div>Its easy :) I know.</div>
+                    </font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-11 bg-surf-grad-smoke " data-x="10868.053333333333" data-y="6328.32"
+     data-rotate-z="124.33184154338863" id="step-12"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(10868.053333333333px, 6328.32px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(124.33184154338863deg) scale(1); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-11" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p>Create a new composer project</p>
+<pre>{
+    <span style="color:#269186"><span style="color:#c60000">"</span>name<span
+            style="color:#c60000">"</span></span>: <span style="color:#269186"><span style="color:#c60000">"</span>fzerorubigd/tehlog-test<span
+            style="color:#c60000">"</span></span>,
+    <span style="color:#269186"><span style="color:#c60000">"</span>description<span
+            style="color:#c60000">"</span></span>: <span style="color:#269186"><span style="color:#c60000">"</span>TDD demonstration<span
+            style="color:#c60000">"</span></span>,
+    <span style="color:#269186"><span style="color:#c60000">"</span>authors<span style="color:#c60000">"</span></span>: <span
+            style="color:#d31e1e">[</span>
+        {
+            <span style="color:#269186"><span style="color:#c60000">"</span>name<span
+                    style="color:#c60000">"</span></span>: <span style="color:#269186"><span
+            style="color:#c60000">"</span>fzerorubigd<span style="color:#c60000">"</span></span>,
+            <span style="color:#269186"><span style="color:#c60000">"</span>email<span
+                    style="color:#c60000">"</span></span>: <span style="color:#269186"><span
+            style="color:#c60000">"</span>fzerorubigd@gmail.com<span style="color:#c60000">"</span></span>
+        }
+    <span style="color:#d31e1e">]</span>,
+    <span style="color:#269186"><span style="color:#c60000">"</span>require<span style="color:#c60000">"</span></span>: {
+    },<strong style="color:red !important">
+        <span style="color:red"><span style="color:#c60000">"</span>require-dev<span
+                style="color:#c60000">"</span></span>: {
+        <span style="color:red"><span style="color:#c60000">"</span>phpunit/phpunit<span style="color:#c60000">"</span></span>:
+        <span style="color:red"><span style="color:#c60000">"</span>~3.7<span style="color:#c60000">"</span></span>
+        }</strong>,
+    <span style="color:#269186"><span style="color:#c60000">"</span>config<span style="color:#c60000">"</span></span>: {
+        <span style="color:#269186"><span style="color:#c60000">"</span>bin-dir<span
+                style="color:#c60000">"</span></span>: <span style="color:#269186"><span style="color:#c60000">"</span>bin/<span
+            style="color:#c60000">"</span></span>
+    },
+    <span style="color:#269186"><span style="color:#c60000">"</span>autoload<span style="color:#c60000">"</span></span>: {
+        <span style="color:#269186"><span style="color:#c60000">"</span>psr-0<span style="color:#c60000">"</span></span>: {
+            <span style="color:#269186"><span style="color:#c60000">"</span>Cybits<span
+                    style="color:#c60000">"</span></span>: <span style="color:#269186"><span
+            style="color:#c60000">"</span>src/<span style="color:#c60000">"</span></span>
+        }
+    }
+}
+
+</pre>
+
+            <p>then run the composer : </p>
+            <pre><code>composer install --dev</code></pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-12 bg-surf-grad-smoke " data-x="6580.906666666667" data-y="11535.36"
+     data-scale="3" id="step-13"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(6580.906666666667px, 11535.36px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-12" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p><br><br><br></p>
+<pre>&lt;?<span style="color:#268bd2;font-weight:700">xml</span><span style="color:#93a1a1"> version</span>=<span
+        style="color:#269186"><span style="color:#c60000">"</span>1.0<span style="color:#c60000">"</span></span><span
+        style="color:#93a1a1"> encoding</span>=<span style="color:#269186"><span
+        style="color:#c60000">"</span>UTF-8<span style="color:#c60000">"</span></span>?&gt;
+
+&lt;<span style="color:#268bd2;font-weight:700">phpunit</span> <span style="color:#93a1a1">bootstrap</span>=<span
+            style="color:#269186"><span style="color:#c60000">"</span>tests/bootstrap.php<span
+            style="color:#c60000">"</span></span> <span style="color:#93a1a1">colors</span>=<span style="color:#269186"><span
+            style="color:#c60000">"</span>true<span style="color:#c60000">"</span></span>&gt;
+    &lt;<span style="color:#268bd2;font-weight:700">testsuites</span>&gt;
+        &lt;<span style="color:#268bd2;font-weight:700">testsuite</span> <span style="color:#93a1a1">name</span>=<span
+            style="color:#269186"><span style="color:#c60000">"</span>TDD example test suite<span style="color:#c60000">"</span></span>&gt;
+            &lt;<span style="color:#268bd2;font-weight:700">directory</span>&gt;tests/&lt;/<span
+            style="color:#268bd2;font-weight:700">directory</span>&gt;
+        &lt;/<span style="color:#268bd2;font-weight:700">testsuite</span>&gt;
+    &lt;/<span style="color:#268bd2;font-weight:700">testsuites</span>&gt;
+
+    &lt;<span style="color:#268bd2;font-weight:700">filter</span>&gt;
+        &lt;<span style="color:#268bd2;font-weight:700">whitelist</span>&gt;
+            &lt;<span style="color:#268bd2;font-weight:700">directory</span> <span
+            style="color:#93a1a1">suffix</span>=<span style="color:#269186"><span
+            style="color:#c60000">"</span>.php<span style="color:#c60000">"</span></span>&gt;src/&lt;/<span
+            style="color:#268bd2;font-weight:700">directory</span>&gt;
+        &lt;/<span style="color:#268bd2;font-weight:700">whitelist</span>&gt;
+    &lt;/<span style="color:#268bd2;font-weight:700">filter</span>&gt;
+&lt;/<span style="color:#268bd2;font-weight:700">phpunit</span>&gt;
+
+</pre>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">phpunit.xml.dist<br></font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step active present" data-state="strut-slide-13 bg-surf-grad-smoke " data-x="14486.186666666666"
+     data-y="4592.64" data-scale="1" id="step-14"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(14486.186666666666px, 4592.64px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-13" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p><br><br><br></p>
+<pre><span style="color:#bd3613"><span style="color:#d30102">&lt;?php</span>
+
+<span style="color:#a57800">class</span> <span style="color:#839496">ExampleTest</span> <span style="color:#a57800">extends</span> <span
+            style="color:#536871">PHPUnit_Framework_TestCase
+</span>{
+
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">testMin</span>()
+    {
+        <span style="color:#268bd2"><span style="color:#859900">$</span>obj</span> <span style="color:#859900">=</span> <span
+            style="color:#cb4b16">new</span> \Cybits\<span style="color:#536871">Example</span>();
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">10</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>min(<span
+            style="color:#269186">10</span>, <span style="color:#269186">100</span>));
+    }
+
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">testMax</span>()
+    {
+        <span style="color:#268bd2"><span style="color:#859900">$</span>obj</span> <span style="color:#859900">=</span> <span
+            style="color:#cb4b16">new</span> \Cybits\<span style="color:#536871">Example</span>();
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">100</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>max(<span
+            style="color:#269186">10</span>, <span style="color:#269186">100</span>));
+    }
+}
+</span></pre>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">tests/ExampleTest.php<br></font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-14 bg-surf-grad-smoke " data-x="14486.186666666666" data-y="10536.96"
+     data-scale="3" id="step-15"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(14486.186666666666px, 10536.96px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-14" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p><br><br><br></p>
+<pre><span style="color:#bd3613"><span style="color:#d30102">&lt;?php</span>
+
+<span style="color:#859900">namespace</span> Cybits;
+
+<span style="color:#a57800">class</span> <span style="color:#839496">Example</span>
+{
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">min</span>(<span style="color:#268bd2"><span
+            style="color:#859900">$</span>a</span>, <span style="color:#268bd2"><span
+            style="color:#859900">$</span>b</span>)
+    {
+<span style="color:#859900">        return</span> <span style="color:#269186">10</span>;
+    }
+
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">max</span>(<span style="color:#268bd2"><span
+            style="color:#859900">$</span>a</span>, <span style="color:#268bd2"><span
+            style="color:#859900">$</span>b</span>)
+    {
+<span style="color:#859900">        return</span> <span style="color:#269186">100</span>;
+    }
+} 
+</span></pre>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 573px; left: 71px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">I know, this is the most idiotic way, but it pass the tests!</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">Wow!! JUST pass the tests :)</font><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-15 bg-surf-grad-smoke " data-x="17995.093333333334" data-y="12764.16"
+     data-scale="3" id="step-16"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(17995.093333333334px, 12764.16px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-15" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p><br><br><br></p>
+<pre><code>f0rud@elbix:/home/f0rud/testSlides/php git:(master*) $ ./bin/phpunit
+    PHPUnit 3.7.28 by Sebastian Bergmann.
+
+    Configuration read from /home/f0rud/testSlides/php/phpunit.xml.dist
+
+    ..
+
+    Time: 25 ms, Memory: 3.00Mb
+
+    OK (2 tests, 2 assertions)</code></pre>
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 40px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">First pass</font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-16 bg-surf-grad-smoke " data-x="18090.666666666668" data-y="6343.68"
+     data-scale="3" id="step-17"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(18090.666666666668px, 6343.68px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-16" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p><br><br><br></p>
+<pre><span style="color:#bd3613"><span style="color:#d30102">&lt;?php</span>
+
+<span style="color:#a57800">class</span> <span style="color:#839496">ExampleTest</span> <span style="color:#a57800">extends</span> <span
+            style="color:#536871">PHPUnit_Framework_TestCase
+</span>{
+
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">testMin</span>()
+    {
+        <span style="color:#268bd2"><span style="color:#859900">$</span>obj</span> <span style="color:#859900">=</span> <span
+            style="color:#cb4b16">new</span> \Cybits\<span style="color:#536871">Example</span>();
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">10</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>min(<span
+            style="color:#269186">10</span>, <span style="color:#269186">100</span>));
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">5</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>min(<span
+            style="color:#269186">10</span>, <span style="color:#269186">5</span>));
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">1</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>min(<span
+            style="color:#269186">1</span>, <span style="color:#269186">100</span>));
+    }
+
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">testMax</span>()
+    {
+        <span style="color:#268bd2"><span style="color:#859900">$</span>obj</span> <span style="color:#859900">=</span> <span
+            style="color:#cb4b16">new</span> \Cybits\<span style="color:#536871">Example</span>();
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">100</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>max(<span
+            style="color:#269186">10</span>, <span style="color:#269186">100</span>));
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">70</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>max(<span
+            style="color:#269186">11</span>, <span style="color:#269186">70</span>));
+        <span style="color:#268bd2"><span style="color:#859900">$</span>this</span><span
+            style="color:#a57800">-&gt;</span>assertEquals(<span style="color:#269186">20</span>, <span
+            style="color:#268bd2"><span style="color:#859900">$</span>obj</span><span style="color:#a57800">-&gt;</span>max(<span
+            style="color:#269186">10</span>, <span style="color:#269186">20</span>));
+    }
+}
+</span></pre>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 38px; left: 65px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">Add more tests</font><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-17 bg-surf-grad-smoke " data-x="18008.746666666666" data-y="9799.68"
+     data-scale="3" id="step-18"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(18008.746666666666px, 9799.68px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(3); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-17" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+            <p><br><br><br></p>
+<pre><span style="color:#bd3613"><span style="color:#d30102">&lt;?php</span>
+
+<span style="color:#859900">namespace</span> Cybits;
+
+<span style="color:#a57800">class</span> <span style="color:#839496">Example</span>
+{
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">min</span>(<span style="color:#268bd2"><span
+            style="color:#859900">$</span>a</span>, <span style="color:#268bd2"><span
+            style="color:#859900">$</span>b</span>)
+    {
+<span style="color:#859900">        return</span> <span style="color:#268bd2">min</span>(<span
+            style="color:#268bd2"><span style="color:#859900">$</span>a</span>, <span style="color:#268bd2"><span
+            style="color:#859900">$</span>b</span>);
+    }
+
+    <span style="color:#073642;font-weight:700">public </span><span style="color:#bd3800">function</span> <span
+            style="color:#899090">max</span>(<span style="color:#268bd2"><span
+            style="color:#859900">$</span>a</span>, <span style="color:#268bd2"><span
+            style="color:#859900">$</span>b</span>)
+    {
+<span style="color:#859900">        return</span> <span style="color:#268bd2">max</span>(<span
+            style="color:#268bd2"><span style="color:#859900">$</span>a</span>, <span style="color:#268bd2"><span
+            style="color:#859900">$</span>b</span>);
+    }
+} 
+</span></pre>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 47px; left: 62px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 36px;" class="antialias">
+                    <font face="Ubuntu">The final code :))</font><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="step future" data-state="strut-slide-18 bg-surf-grad-smoke " data-x="2321.0666666666666" data-y="2764.8"
+     data-rotate-x="179.90874767107852" id="step-19"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(2321.0666666666666px, 2764.8px, 0px) rotateX(179.90874767107852deg) rotateY(0deg) rotateZ(0deg) scale(1); -webkit-transform-style: preserve-3d;">
+    <div class=" slideContainer strut-slide-18" style="width: 1024px; height: 768px;">
+        <div class="themedArea">
+
+        </div>
+
+        <div class="componentContainer "
+             style="top: 198px; left: 399px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font>Who Am I?</font>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 272px; left: 382px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    Bita's Dad :)&nbsp;<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 587px; left: 262px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    Developer @&nbsp;<a href="http://rasa-web.com/">Rasa-Web</a><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 664px; left: 266px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <a href="https://github.com/fzerorubigd">github</a><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 659px; left: 658px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <a href="http://cyberrabbits.net/">blog</a><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 362px; left: 412px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <img src="./tdd_files/me.jpg">
+            </div>
+        </div>
+
+        <div class="componentContainer "
+             style="top: 74px; left: 392px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+            <div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+                <div style="font-size: 48px;" class="antialias">
+                    <font face="Ubuntu">Questions?</font>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="overview" class="step future" data-state="strut-slide-overview" data-x="17681.066666666666" data-y="8079.36"
+     data-scale="9"
+     style="position: absolute; -webkit-transform: translate(-50%, -50%) translate3d(17681.066666666666px, 8079.36px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(9); -webkit-transform-style: preserve-3d;"></div>
+
+</div>
+</div>
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+</div>
+</div>
+</body>
+</html>

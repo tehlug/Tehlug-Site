@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Functional Programming</title>
+
+		<meta name="description" content="an introduction to functional programming">
+		<meta name="author" content="Behrooz Shabani">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+        <style type="text/css">
+            #scala-option {
+                width: 300px;
+                box-shadow: none;
+                padding-left: 182px;
+            }
+            #time-atomic {
+                width: 250px;
+                box-shadow: none;
+            }
+            #gc-vector {
+                width: 285px;
+                box-shadow: none;
+            }
+            #foss-list {
+                font-size: large;
+                line-height: 100%;
+            }
+            #resources {
+                font-size: large;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+                <section>
+                    <h3>Behrooz Shabani</h3>
+                    <p>
+                        <b>@everplays</b>
+                    </p>
+                    <ul id="foss-list">
+                        <li>RadioTray - Python</li>
+                        <li>Archipel - Python / Objective-J</li>
+                        <li>ShadowSocks - Python</li>
+                        <li>MiniProfiler - Ruby</li>
+                        <li>Diaspora - Ruby</li>
+                        <li>Peace - Scala</li>
+                        <li>MapKit - Java / Objective-C</li>
+                        <li>ChildBrowser - Java / Objective-C</li>
+                        <li>Status.net / GNUSocial - php</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>imperative</li>
+                        <li>declarative
+                            <ul>
+                                <li>functional</li>
+                                <li>logic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>OOP</h3>
+                    <blockquote>The big idea is "messaging".</blockquote>
+                    ^ <b>Alan Kay</b>
+                </section>
+
+                <section>
+                    <h3>Pure OO?</h3>
+                    <ul>
+                        <li>classes</li>
+                        <li>
+                            Imperative types<br>
+                            <small>by using Peano numbers you can implement imperative types as objects</small>
+                        </li>
+                        <li>methods</li>
+                        <li>Operations</li>
+                    </ul>
+				</section>
+
+                <section>
+                    <h3>Isolation</h3>
+                    <pre><code class="java">system.exit()</code></pre>
+                </section>
+
+                <section>
+                    <h3>Functional programming</h3>
+                    <ul>
+                        <li>immutability</li>
+                        <li>higher order functions</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Math</h3>
+                    <pre><code class="javascript">y = 10
+x = y + 9
+y = 11 // you can't do it in math!</code></pre>
+                </section>
+
+                <section>
+                    <h3>brain/logic & mutability</h3>
+                    <blockquote>No man ever steps in the same river twice.</blockquote>
+                    ^ <b>Heraclitus</b><br>
+                    <small>read more: "Process and reality" by Alfred North Whitehead</small>
+                </section>
+
+                <section>
+                    <h3>time is atomic</h3>
+                    <p>2.418884326505(16)×10^17 s</p>
+                    <pre id="time-atomic">              |------|
+Book -------- |-Val1-|
+    \         |------|
+     \
+      \
+       \  |------|
+        \ |-Val2-|
+          |------|</pre>
+                </section>
+
+                <section>
+                    <p>Why immutability could be a good thing?<p>
+                </section>
+
+                <section>
+                    <p>concurrency</p>
+                </section>
+
+                <section>
+                    <p>
+                        Garbage collection / Memory management
+                    </p>
+                    <pre id="gc-vector">      r           r
+     / \           \
+    o   x   ----&gt;   x
+   / \ / \           \
+  o  o o              n
+
+   we can use the left
+        side as is</pre>
+                    <small>don't copy, use old data, they won't change</small>
+                </section>
+
+                <section>
+                    <p>
+                    All functional languages are side-effect free? <b>no</b>.<br>
+                    Erlang, scala, clojure, F#, ...
+                    </p>
+                </section>
+
+                <section>
+                    <h3>higher order functions</h3>
+                </section>
+
+                <section>
+                    <pre><code class="javascript">// data
+var x = 10;
+
+// code
+function foo() { ... }
+</code></pre>
+                </section>
+
+                <section>
+                    <h3>code is data, too.</h3>
+                    <p>remember the "turing machine"?</p>
+                </section>
+
+                <section>
+                    <pre><code class="javascript">// so, let's pass them around like other values
+
+var list = [5, 10, 1];
+
+list.sort(function(a, b){
+    return a - b;
+}); // [1, 5, 10]
+</code></pre>
+                </section>
+
+                <section>
+                    <h3>pure functions</h3>
+                    <p>always return the same result where called with the same arguments.</p>
+                </section>
+
+                <section>
+                    <pre><code class="clojure">(defn plusOne [a] (+ a 1))
+
+(plusOne 2) #_ always returns 3, no matter what!
+</code></pre>
+                </section>
+
+                <section>
+                    <p>
+                        every language with HOF is functional? <b>no</b>.<br>
+                        js, ruby, smalltalk, (even!) java
+                    </p>
+                </section>
+
+                <section>
+                    so functional programming is not just:<br>
+                    <ul>
+                        <li>immutability</li>
+                        <li>higher order functions</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>let's get a bit more into depth</p>
+                </section>
+
+                <section>
+                    <p>performance of mutable vs immutable</p>
+                </section>
+
+                <section>
+                    <p>adding one million items to a Vector:</p>
+                </section>
+
+                <section>
+                    <h3>scala</h3>
+                    <p>
+                        immutable: ~127ms<br>
+                        &nbsp;&nbsp;mutable: ~89ms
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Clojure</h3>
+                    <p>
+                        immutable: ~114ms<br>
+                        &nbsp;&nbsp;mutable: ~74ms
+                    </p>
+                </section>
+
+                <section>
+                    <blockquote>This is crazy, C should go faster, well yes it does but it had a lock. Erlang was slower but lock-free and thus scaleable. So removing the C and doing image processing in Erlang was faster than doing it in C.
+                    </blockquote>
+                    ^ <b>Joe Armstrong</b>
+                </section>
+
+                <section>
+                    <p>read more:<br>
+                        functional programming patterns in scala and clojure<br>
+                        &amp;<br>
+                        http://joearms.github.io/2013/03/28/solving-the-wrong-problem.html
+                    </p>
+                </section>
+
+                <section>
+                    <h3>loops</h3>
+                    <p>there's no mutable state, so there's no for / while / foreach / ...</p>
+                </section>
+
+                <section>
+                    <h3>recursive functions</h3>
+                    <pre><code class="erlang">factorial(0) -&gt; 1;
+factorial(N) -&gt; N * factorial(N-1).</code></pre>
+                </section>
+
+                <section>
+                    <h3>stack overflow</h3>
+                    <pre>01: 20 * factorial(19)
+02:     19 * factorial(18)
+03:          18 * factorial(17)
+               ...
+                  ...
+                     ...
+19:                         2 * factorial(1)
+20:                             1 * factorial(0)</pre>
+                </section>
+
+                <section>
+                    <h3>tail recursion</h3>
+                    <pre><code class="erlang">factorial(N) -&gt; tail_fac(N, 1).
+
+tail_fac(0,Acc) -&gt; Acc;
+tail_fac(N,Acc) -&gt; tail_fac(N-1, N*Acc).</code></pre>
+                </section>
+
+                <section>
+                    <pre>01: 20, 1
+01: 19, 20
+01: 18, 380
+...
+01: 0, 2432902008176640000</pre>
+                </section>
+
+                <section>
+                    <p>
+                        you need to be careful, you might lose your stack trace!<br>
+                        <small>(not in erlang)</small>
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Monads</h3>
+                    <ul>
+                        <li>Box of pandora</li>
+                        <li>Space suits</li>
+                        <li>Nuclear waste container</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>monoid</h3>
+                    <pre><code class="erlang">x: A
+f: A -&gt; A
+g: A -&gt; A
+
+f(g(x)) = f.g(x) = h(x)
+
+h: A -&gt; A</code></pre>
+                    <p>
+                        ^ <small>group theory</small>
+                    </p>
+                </section>
+
+                <section>
+                    <h3>monoid rules</h3>
+                    <ol>
+                        <li>f(g.h) = (f.g).h</li>
+                        <li>zero unit</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <p>now if argument types differ, we're in category theory but we already know that in order to call a function, argument type has to match.</p>
+                </section>
+
+                <section>
+                    <h3>what these monads are useful for?</h3>
+                    <p>collections of any kind: in-memory, streams (IO), databases</p>
+                </section>
+
+                <section>
+                    unix' pipe, does the thing that monads do:
+                    <pre><code class="bash">cat ~/foo.txt | sed 's/bar baz/qux/g' | grep 'qux' | wc -l</code></pre>
+                </section>
+
+                <section>
+                    scala:
+                    <pre id="scala-option">  Option (is a monad)
+  /    \
+None  Some</pre>
+                </section>
+
+                <section>
+                    <pre><code class="scala">// row will be a Map (assoc array in php)
+val row = SQLSelectOneRow("select title from posts where id = 10")
+
+// check if we could find the row
+if ( row ) {
+    return row.get("title")
+} else {
+    return None
+}</code></pre>
+                </section>
+
+                <section>
+                    <pre><code class="scala">// let's assume row is wrapped in Option
+val row = SQLSelectOneRow("select title from posts where id = 10")
+
+row map ( _.get("title") )</code></pre>
+                </section>
+
+                <section>
+                    <h3>pattern matching</h3>
+                </section>
+
+                <section>
+                    <pre><code class="scala">case class Person(val firstName:String, val lastName:String, val age:Int)
+
+val behrooz = Person("Behrooz", "Shabani", 24)
+val martin = Person("Martin", "Odersky", 55)
+
+def fullNameOfPersonIfUnder30(p:Person) = p match {
+    case Person(fName, lName, age) if age &lt; 30 =&gt; Some(fName + " " + lName)
+    case _ =&gt; None
+}</code></pre>
+                </section>
+
+                <section>
+                    <pre><code class="scala">fullNameOfPersonIfUnder30(behrooz)
+// Option[String] = Some(Behrooz Shabani)
+
+fullNameOfPersonIfUnder30(martin)
+// Option[String] = None</code></pre>
+                </section>
+
+                <section>
+                    <p>
+                        read more:<br>
+                        pattern matching is an awesome solution for &quot;expression problem&quot;<br>
+                        &amp;<br>
+                        Beginning Scala by David Pollak (Chapter 8)
+                    </p>
+                </section>
+
+                <section>
+                    <h3>actors</h3>
+                    <p>
+                        are not really connected to FP but as languages we talked about have actors*, I'll talk about them too.<br>
+                        <small>* agents in case of clojure are not exactly actor</small>
+                    </p>
+                </section>
+
+                <section>
+                    <pre><code class="erlang">run() -&gt;
+    spawn(counter, counter, [0]).
+
+counter(Sum) -&gt;
+    receive
+        print -&gt;
+            io:fwrite("Value is ~w~n", [Sum]),
+            counter(Sum);
+        {value, Sender} -&gt;
+            Sender ! Sum,
+            counter(Sum);
+        {inc, Amount} -&gt;
+            counter(Sum+Amount);
+        stop -&gt;
+            io:fwrite("Stopping ...")
+    end.</code></pre>
+                </section>
+
+                <section>
+                    <pre><code class="erlang">CounterActor = counter:run().
+
+% prints: Value is 0
+CounterActor ! print.
+
+% increase it by 3
+CounterActor ! {inc, 3}.
+
+% prints: Value is 3
+CounterActor ! print.</code></pre>
+                </section>
+
+                <section>
+                    <pre><code class="erlang">CounterActor ! {value, self()}.
+receive
+    TheReceivedValue -&gt;
+        io:frwite("double of Value is ~w~n", [TheReceivedValue*2])
+end.</code></pre>
+                </section>
+
+                <section>
+                    who/what is using ...
+                </section>
+
+                <section>
+                    <h3>Scala</h3>
+                    <ul>
+                        <li>Novell</li>
+                        <li>twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Play</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Erlang</h3>
+                    <ul>
+                        <li>Amazon</li>
+                        <li>Ericsson</li>
+                        <li>Facebook</li>
+                        <li>RabbitMQ</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Clojure</h3>
+                    <ul>
+                        <li>Prismatic</li>
+                        <li>ReadyForZero</li>
+                        <li>Montoux</li>
+                        <li>Ring</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>resources:</h3>
+                    <pre id="resources">http://en.wikipedia.org/wiki/Smalltalk
+http://joearms.github.io/ by Joe Armstrong
+http://pragprog.com/book/mbfpp/functional-programming-patterns-in-scala-and-clojure by Michael Bevilacqua-Linn
+http://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey by Rick Hickey
+http://www.infoq.com/presentations/functional-pros-cons by Gilad Bracha
+http://channel9.msdn.com/Shows/Going+Deep/Brian-Beckman-Dont-fear-the-Monads by Brian Beckman
+Coursera Scala by Martin Odersky</pre>
+                </section>
+
+                <section>
+                    <p>
+                        <img src="QR-twitter-everplays.png" alt="http://twitter.com/everplays" /><br>
+                        ^ twitter (@everplays)
+                    </p>
+                    <br>
+                    <h2>Questions?</h2>
+                </section>
+
+                <section>
+                    <p>
+                        <img src="Rainbow_flag_and_blue_skies.jpg" alt="LGBT flag" /><br>
+                        R.I.P. Alan Turing.
+                    </p>
+                </section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
