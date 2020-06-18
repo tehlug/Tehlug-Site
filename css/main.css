@@ -482,6 +482,11 @@ table th, table td {
     }
 }
 
+.poster {
+    margin: 0 auto;
+    width: 200px;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
