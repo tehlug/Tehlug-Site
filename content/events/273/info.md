@@ -11,8 +11,8 @@ address: "خیابان کارگر شمالی، خیابان فرشی‌مقدم 
 registerLink: https://evand.com/events/tehlug273
 speakers: [بهبود بشیری, محمد مسلمی]
 topics: [Web3, AI, Linux]
-lat: 35.732744097378024
-lng: 51.39010102028837
+lat: 35.73237
+lng: 51.38759
 locations: [دانشگاه تهران]
 ---
 
