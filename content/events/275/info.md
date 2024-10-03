@@ -44,7 +44,7 @@ locations: [دانشگاه خاتم]
 ### Cloud Native Community
 
 ۱۸:۰۰ - ۱۸:۱۵ : خوش‌آمدگویی و بیان اطلاعاتی راجع به گروه Cloud Native و نحوه مشارکت در جلسات  
-۱۸:۱۵ - ۱۸:۴۵ : ارائه K8S security with Falco توسط جابر زارعارائه Log management in k8s cluster توسط مهدی بهرامی  
+۱۸:۱۵ - ۱۸:۴۵ : ارائه K8S security with Falco توسط جابر زارع  
 ۱۸:۴۵ - ۱۹:۱۵ : ارائه Log management in k8s cluster توسط مهدی بهرامی  
 ۱۹:۱۵ - ۲۰:۰۰ :  پذیرایی و گپ و گفت (نتورکینگ)
 
