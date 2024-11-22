@@ -1,6 +1,6 @@
 ---
 title: "جلسه ۲۷۶"
-date: 2024-11-28T00:00:00+03:30
+date: 2024-11-21T00:00:00+03:30
 layout: event
 type: event
 eventNumber: 276
